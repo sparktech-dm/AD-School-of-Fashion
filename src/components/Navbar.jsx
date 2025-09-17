@@ -53,10 +53,10 @@ export const Navbar = () => {
   }, [location, navigate]);
 
   const menuItems = [
-    { name: 'services', type: 'route', path: '/services' },
-    { name: 'projects', type: 'route', path: '/projects' },
-    { name: 'blogs', type: 'route', path: '/blogs' },
-    { name: 'contact', type: 'scroll', id: 'contact' },
+    { name: 'Home', type: 'route', path: '/services' },
+    { name: 'About Us', type: 'route', path: '/about' },
+    { name: 'Courses', type: 'route', path: '/courses' },
+    { name: 'Contact', type: 'scroll', id: '/contact' },
   ];
 
   const handleScroll = (id) => {
@@ -90,7 +90,7 @@ export const Navbar = () => {
   // Desktop Navbar
   return (
     <div className='w-full h-[50px] fixed top-0 z-50 font-[Inter] flex justify-center items-center h-[80px]'>
-     <div className="flex items-center w-[90%] max-w-5xl rounded-full bg-[#79548a] px-8 py-2 shadow-lg">
+     <div className="flex items-center w-[90%] max-w-5xl rounded-full bg-[#5a2d4b] px-8 py-2 shadow-lg">
         {/* Logo on the left */}
         <div className='flex-shrink-0 mr-6'>
           <RouterLink to='/' onClick={handleScrollTop}>
