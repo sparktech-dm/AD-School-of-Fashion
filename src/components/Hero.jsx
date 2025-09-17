@@ -1,6 +1,7 @@
 export default function Hero() {
   return (
     <section className="relative bg-[#f0eee0] w-full flex flex-col md:flex-row items-center justify-between h-[800px]">
+
       {/* Left Content */}
       <div className="relative z-10 flex-1 px-8 md:px-16">
         <h1 className="text-5xl md:text-7xl font-bold" style={{ color: "#5a2d4b" }}>
