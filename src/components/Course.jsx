@@ -8,9 +8,6 @@ export default function Center() {
   return (
     <section className="pt-[250px] bg-[#f0eee0] ">
       <div>
-            <img src={Scissor2} alt="" className="ml-[200px]" />
-        </div>
-      <div>
         <div className="text-5xl text-[#4b284b] italic mt-14  ml-[600px]">Our Courses</div>
       </div>
       <div className="ml-[150px] grid grid-cols-2 items-center w-[1200px] mt-10">
