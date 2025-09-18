@@ -11,7 +11,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setMenuOpen(false); // Close mobile menu on route change
+    setMenuOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -87,89 +87,97 @@ export const Navbar = () => {
     }
   };
 
-  // Desktop Navbar
   return (
-    <div className='w-full h-[50px] fixed top-0 z-50 font-[Inter] flex justify-center items-center h-[80px]'>
-     <div className="flex items-center w-[90%] max-w-5xl rounded-full bg-[#5a2d4b] px-8 py-2 shadow-lg">
-        {/* Logo on the left */}
-        <div className='flex-shrink-0 mr-6'>
-          <RouterLink to='/' onClick={handleScrollTop}>
-            <div className='w-[50px] h-[50px] cursor-pointer'>
-              <img
-                src={Logo}
-                alt='Logo'
-                className='w-full h-full object-contain'
-              />
-            </div>
-          </RouterLink>
-        </div>
-        {/* Menu items centered */}
-        <div className='flex-1 flex justify-center'>
-          <ul className='flex items-center gap-x-3'>
-            {menuItems.map((item) => (
-              <li key={item.name} onClick={() => handleItemClick(item)}>
-                {item.type === 'route' ? (
-                  <RouterLink
-                    to={item.path}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                      active === item.name
-                        ? 'bg-white/10 text-[#f0c417]'
-                        : 'text-white hover:text-[13px] hover:bg-[#4f4e4e]'
-                    }`}
-                  >
-                    {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
-                  </RouterLink>
-                ) : (
-                  <span
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
-                      active === item.name
-                        ? 'bg-white/10 text-[#f0c417]'
-                        : 'text-white hover:text-[13px] hover:bg-[#4f4e4e]'
-                    }`}
-                  >
-                    {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
-                  </span>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-        {/* CTA Button on the right */}
-        <div className='flex-shrink-0 ml-6'>
-          <button
-            className='bg-[#f0c417] text-[#79548a] px-6 py-2 rounded-full font-bold hover:bg-[#e6b800] transition-all duration-200'
-            onClick={() => navigate('/enroll')}
-          >
-            Enroll Now
-          </button>
+    <nav className="w-full fixed top-0 z-50 font-[Inter]">
+      {/* Capsule-shaped centered navbar (desktop/tablet only) */}
+      <div className="hidden md:flex justify-center items-center h-20 lg:h-24 w-full xl:h-32 w-full ">
+        <div className="flex items-center w-full max-w-5xl rounded-full bg-[#5a2d4b] px-4 md:px-8 py-2 shadow-lg ">
+          {/* Logo on the left */}
+          <div className='flex-shrink-0 mr-4 md:mr-6'>
+            <RouterLink to='/' onClick={handleScrollTop}>
+              <div className='w-10 h-10 md:w-12 md:h-12 cursor-pointer'>
+                <img
+                  src={Logo}
+                  alt='Logo'
+                  className='w-full h-full object-contain'
+                />
+              </div>
+            </RouterLink>
+          </div>
+          {/* Menu items centered */}
+          <div className='flex-1 flex justify-center'>
+            <ul className='flex items-center gap-x-2 md:gap-x-4'>
+              {menuItems.map((item) => (
+                <li key={item.name} onClick={() => handleItemClick(item)}>
+                  {item.type === 'route' ? (
+                    <RouterLink
+                      to={item.path}
+                      className={`px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 ${
+                        active === item.name
+                          ? 'bg-white/10 text-[#f0c417]'
+                          : 'text-white hover:text-[13px] hover:bg-[#4f4e4e]'
+                      }`}
+                    >
+                      {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                    </RouterLink>
+                  ) : (
+                    <span
+                      className={`px-2 md:px-4 py-1 md:py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 ${
+                        active === item.name
+                          ? 'bg-white/10 text-[#f0c417]'
+                          : 'text-white hover:text-[13px] hover:bg-[#4f4e4e]'
+                      }`}
+                    >
+                      {item.name.charAt(0).toUpperCase() + item.name.slice(1)}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* CTA Button on the right */}
+          <div className='flex-shrink-0 ml-4 md:ml-6'>
+            <button
+              className='bg-[#f0c417] text-[#79548a] px-4 md:px-6 py-1 md:py-2 rounded-full font-bold hover:bg-[#e6b800] transition-all duration-200 text-xs md:text-base'
+              onClick={() => navigate('/enroll')}
+            >
+              Enroll Now
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navbar Header */}
-      <div className='md:hidden flex justify-between items-center px-5 h-full backdrop-blur bg-gray-600/40'>
-        <RouterLink to='/' onClick={handleScrollTop}>
-          <div className='w-[50px] h-[50px] cursor-pointer'>
-            <img src={Logo} alt='Logo' className='w-full h-full object-contain' />
-          </div>
-        </RouterLink>
+      {/* Mobile Navbar Header (mobile only) */}
+      <div className='flex md:hidden items-center px-3 h-16 backdrop-blur bg-gray-600/40 relative'>
+        {/* Hamburger menu on the left */}
         <button
-          className='text-white text-2xl'
+          className='text-white text-2xl mr-2'
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
+        {/* Logo in the center */}
+        <div className="flex-1 flex justify-center">
+          <RouterLink to='/' onClick={handleScrollTop}>
+            <div className='w-10 h-10 cursor-pointer'>
+              <img src={Logo} alt='Logo' className='w-full h-full object-contain' />
+            </div>
+          </RouterLink>
+        </div>
+        {/* Empty div for spacing on right */}
+        <div style={{ width: '2rem' }}></div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown (mobile only) */}
       {menuOpen && (
-        <div className='md:hidden absolute top-[80px] left-0 w-full border-t border-[#444] bg-[#79548a]'>
-          <ul className='flex flex-col items-center gap-4 py-4'>
+        <div className='md:hidden absolute top-16 left-0 w-full border-t border-[#444] bg-[#79548a]'>
+          <ul className='flex flex-col items-center gap-2 py-2'>
             {menuItems.map((item) => (
               <li key={item.name} onClick={() => handleItemClick(item)}>
                 {item.type === 'route' ? (
                   <RouterLink
                     to={item.path}
-                    className={`px-4 py-2 rounded-full text-base font-semibold transition-all duration-200 ${
+                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                       active === item.name
                         ? 'bg-[#262424] text-[#f0c417]'
                         : 'text-white hover:bg-[#4f4e4e]'
@@ -179,7 +187,7 @@ export const Navbar = () => {
                   </RouterLink>
                 ) : (
                   <span
-                    className={`px-4 py-2 rounded-full text-base font-semibold transition-all duration-200 ${
+                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                       active === item.name
                         ? 'bg-[#262424] text-[#f0c417]'
                         : 'text-white hover:bg-[#4f4e4e]'
@@ -193,7 +201,7 @@ export const Navbar = () => {
             {/* CTA Button in mobile dropdown */}
             <li>
               <button
-                className='bg-[#f0c417] text-[#79548a] px-6 py-2 rounded-full font-bold hover:bg-[#e6b800] transition-all duration-200'
+                className='bg-[#f0c417] text-[#79548a] px-6 py-2 rounded-full font-bold hover:bg-[#e6b800] transition-all duration-200 text-sm'
                 onClick={() => {
                   setMenuOpen(false);
                   navigate('/enroll');
@@ -205,7 +213,7 @@ export const Navbar = () => {
           </ul>
         </div>
       )}
-    </div>
+    </nav>
   );
 };
 

@@ -7,21 +7,21 @@ export default function About() {
       <img
         src="./about top img copy.webp"
         alt="About Main"
-        className="w-[300px] h-[180px] mb-8"
+        className="w-[300px] h-[180px] "
       />
 
       <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto items-start min-h-[600px]">
         {/* Left Side Content */}
         <div className="flex-1 flex flex-col justify-center px-8 py-6">
-          <h2 className="text-4xl mt-0 md:text-4xl font-bold mb-4" style={{ color: "#5a2d4b" }}>
+          <h2 className="text-4xl mt-0 md:text-6xl font-bold mb-4 xl:text-7xl pl-32" style={{ color: "#5a2d4b" }}>
             About
           </h2>
-          <p className="text-lg md:text-xl mb-6" style={{ color: "#5a2d4b" }}>
+          <p className="text-lg md:text-2xl mb-6 xl:text-3xl" style={{ color: "#5a2d4b" }}>
             We are dedicated to teaching the art of tailoring, fashion design, and embroidery.
             Our expert trainers help you master skills for a successful career in fashion.
             Join us to unlock your creativity and become a professional tailor.
           </p>
-          <ul className="list-disc pl-5 text-[#5a2d4b]">
+          <ul className="list-disc pl-5 text-[#5a2d4b] md:text-2xl xl:text-3xl space-y-2">
             <li>Expert trainers</li>
             <li>Modern equipment</li>
             <li>Hands-on learning</li>
@@ -43,22 +43,22 @@ export default function About() {
             <img
               src="./about img 1.png"
               alt="About 1"
-              className="absolute top-20 left-20 w-32 h-32 rounded-lg"
+              className="absolute top-20 left-20 w-32 h-32 "
             />
             <img
               src="./about img 2.png"
               alt="About 2"
-              className="absolute top-20 right-20 w-32 h-32 rounded-lg"
+              className="absolute top-20 right-20 w-32 h-32 "
             />
             <img
               src="./about img 3.png"
               alt="About 3"
-              className="absolute bottom-20 left-20 w-32 h-32 rounded-lg"
+              className="absolute bottom-20 left-20 w-32 h-32 "
             />
             <img
               src="./about img 4.png"
               alt="About 4"
-              className="absolute bottom-20 right-20 w-32 h-32 rounded-lg"
+              className="absolute bottom-20 right-20 w-32 h-32 "
             />
           </div>
         </div>
