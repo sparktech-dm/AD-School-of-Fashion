@@ -6,7 +6,7 @@ import Scissor2 from"../assets/Scissor2.webp";
 
 export default function Center() {
   return (
-    <section className="pt-[250px] bg-[#f0eee0] ">
+    <section className="py-12 bg-[#f0eee0] ">
         <div>
             <img src={Scissor1} alt="" className="ml-[200px]"/>
         </div>
