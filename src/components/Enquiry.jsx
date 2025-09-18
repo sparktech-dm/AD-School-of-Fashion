@@ -3,8 +3,8 @@ import React from "react";
 export default function Enquiry() {
   return (
     <section className="py-10 bg-[#f0eee0]">
-      <div className="max-w-7xl  mx-auto px-6">
-        <div className="bg-[#e7c1aa] rounded-3xl p-8 flex flex-col lg:flex-row justify-between items-center gap-8 h-[400px] ">
+      <div className="max-w-7xl   mx-auto px-6">
+        <div className="bg-[#e7c1aa] rounded-3xl p-8 flex flex-col lg:flex-row justify-between items-center gap-8 h-[500px] ">
           {/* Left Text */}
           <div className="text-center lg:text-left">
             <h2 className="text-4xl font-medium text-[#4a2d2a]">
@@ -35,6 +35,11 @@ export default function Enquiry() {
               </div>
               <input
                 type="text"
+                placeholder="Number*"
+                className="w-full rounded-full px-4 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+              <input
+                type="text"
                 placeholder="Course*"
                 className="w-full rounded-full px-4 py-2 text-sm border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
               />
@@ -44,7 +49,7 @@ export default function Enquiry() {
               ></textarea>
               <button
                 type="submit"
-                className="bg-[#58284b] text-white rounded-full py-2 font-medium hover:bg-[#3f1935] transition"
+                className="bg-[#58284b] text-white rounded-full py-2 sm:p-10 font-medium hover:bg-[#3f1935] transition"
               >
                 Enquire Now
               </button>

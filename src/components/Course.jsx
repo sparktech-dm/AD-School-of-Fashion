@@ -1,9 +1,6 @@
-import React from "react"; 
+
 import Learn1 from"../assets/Learn1.webp";
 import Learn2 from"../assets/Learn2.webp";
-import Scissor1 from"../assets/Scissor1.webp";
-import Scissor2 from"../assets/Scissor2.webp";
-
 export default function Center() {
   return (
     <section className="pt-[250px] bg-[#f0eee0] ">
