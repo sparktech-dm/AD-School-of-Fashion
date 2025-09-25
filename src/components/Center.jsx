@@ -4,59 +4,37 @@ import Scissor2 from "../assets/Scissors2.webp";
 
 export default function Center() {
   return (
-    <section className="py-[200px] bg-[#f0eee0]">
-      {/* Top Scissor */}
-   <div className="flex justify-center items-center p-4">
-  <img
-  src={Scissor1}
-  alt="test"
-  className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-[1200px]"
-/>
-</div>
-
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-12 mb-2">
-        {/* Top Row */}
-        <div className="flex flex-wrap justify-center gap-8 lg:gap-16 w-full">
-          <button className="bg-transparent text-2xl lg:text-4xl xl:text-5xl pt-6 font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
+    <section className="py-32 bg-[#f0eee0]">
+      <div className="max-w-6xl mx-auto px-8 flex flex-col items-center gap-12 mb-2">
+        {/* Row: The Studio (left), Logo (center), Courses (right) */}
+        <div className="relative w-full flex items-end" style={{ minHeight: "180px" }}>
+          <button className="absolute bottom-0 left-0 italic font-bold font-cormorant bg-transparent text-3xl lg:text-4xl xl:text-5xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
             The Studio
           </button>
-          <button className="bg-transparent text-2xl lg:text-4xl xl:text-5xl pt-6 font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
+          <div className="mx-auto flex flex-col items-center">
+            <h1 className="text-6xl lg:text-8xl font-extrabold font-cormorant text-[#4b284b]">
+              AD
+            </h1>
+            <p className="italic text-4xl lg:text-6xl pb-4 text-[#4b284b]">
+              School of Fashion
+            </p>
+          </div>
+          <button className="absolute bottom-0 right-0 italic font-bold font-cormorant bg-transparent text-3xl lg:text-4xl xl:text-5xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
             Courses
           </button>
         </div>
-
-        {/* Center Logo */}
-        <div className="text-center">
-          <h1 className="text-5xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-semibold text-[#4b284b]">
-            AD
-          </h1>
-          <p className="italic text-3xl lg:text-5xl xl:text-6xl 2xl:text-7xl pb-6 text-[#4b284b]">
-            School of Fashion
-          </p>
-        </div>
-
-        {/* Bottom Row - 3 buttons in same line */}
+        {/* Bottom Row - 3 buttons */}
         <div className="flex flex-wrap lg:flex-nowrap justify-center gap-6 lg:gap-12 w-full">
-          <button className="bg-transparent text-2xl lg:text-4xl xl:text-5xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
+          <button className="italic font-bold font-cormorant bg-transparent text-3xl lg:text-4xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
             Community Works
           </button>
-          <button className="bg-transparent text-2xl lg:text-4xl xl:text-5xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
+          <button className="italic font-bold font-cormorant bg-transparent text-3xl lg:text-4xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
             Our Story
           </button>
-          <button className="bg-transparent text-2xl lg:text-4xl xl:text-5xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
+          <button className="italic font-bold font-cormorant bg-transparent text-3xl lg:text-4xl font-medium text-[#4b284b] hover:text-[#6d3d55] transition cursor-pointer border-none shadow-none before:content-[''] before:block before:w-full before:h-[2px] before:bg-[#4b284b] before:mb-2">
             Showcases
           </button>
         </div>
-      </div>
-
-      {/* Bottom Scissor */}
-      <div className="flex justify-center items-center p-4">
-        <img
-          src={Scissor2}
-          alt=""
-          className="w-full max-w-screen-sm sm:max-w-screen-md md:max-w-screen-lg lg:max-w-screen-xl xl:max-w-[1200px]"
-        />
       </div>
     </section>
   );

@@ -5,61 +5,49 @@ export default function About() {
     <section className="relative w-full flex flex-col items-center bg-[#f0eee0] py-16">
       {/* Top Center Main Image */}
       <img
-        src="./about top img copy.webp"
+        src="./about top.png"
         alt="About Main"
-        className="w-[300px] h-[180px] "
+        className="w-[300px] h-[250px]"
       />
 
-      <div className="flex flex-col md:flex-row w-full max-w-6xl mx-auto items-start min-h-[600px]">
+      <div className="flex flex-col md:flex-row w-full mx-auto min-h-[600px]">
         {/* Left Side Content */}
-        <div className="flex-1 flex flex-col justify-center px-8 py-6">
-          <h2 className="text-4xl mt-0 md:text-6xl font-bold mb-4 xl:text-7xl pl-32" style={{ color: "#5a2d4b" }}>
+        <div className="flex-[2] flex flex-col justify-center px-8 py-6 ml-auto md:ml-20">
+          <h2
+            className="font-extrabold font-cormorant text-5xl md:text-7xl xl:text-8xl mb-6"
+            style={{ color: "#5a2d4b" }}
+          >
             About
           </h2>
-          <p className="text-lg md:text-2xl mb-6 xl:text-3xl" style={{ color: "#5a2d4b" }}>
-            We are dedicated to teaching the art of tailoring, fashion design, and embroidery.
-            Our expert trainers help you master skills for a successful career in fashion.
-            Join us to unlock your creativity and become a professional tailor.
+          <p
+            className="italic font-bold font-cormorant text-xl md:text-3xl mb-6"
+            style={{ color: "#5a2d4b" }}
+          >
+            Fashion isn’t only for models or magazines. It begins with the courage to cut your own fabric.
           </p>
-          <ul className="list-disc pl-5 text-[#5a2d4b] md:text-2xl xl:text-3xl space-y-2">
-            <li>Expert trainers</li>
-            <li>Modern equipment</li>
-            <li>Hands-on learning</li>
-            <li>Career guidance</li>
-          </ul>
+          <p
+            className="italic font-bold font-cormorant text-xl md:text-3xl mb-6"
+            style={{ color: "#5a2d4b" }}
+          >
+            Our studios feel like a sketchbook brought to life — full of fabric, color, and ideas. With kind mentors, practical training, and a creative community, you’ll learn to transform your imagination into real fashion pieces. At AD School of Fashion, we open our doors to dreamers of every age.
+          </p>
         </div>
 
-                {/* Right Side Splash and Images */}
+        {/* Right Side Splash and Images */}
         <div className="relative flex-[1.5] flex items-center justify-center px-16 py-14">
           {/* Splash Background Image */}
-          <div className="relative w-[34rem] h-[34rem] -mt-10">
+          <div className="relative w-[40rem] h-[40rem] -mt-10"> {/* Increased size */}
             <img
               src="./about bg splash.png"
               alt="Splash Background"
               className="w-full h-full object-cover"
               style={{ filter: "blur(2px)" }}
             />
-            {/* Four images positioned inside splash */}
-            <img
-              src="./about img 1.png"
-              alt="About 1"
-              className="absolute top-20 left-20 w-32 h-32 "
-            />
-            <img
-              src="./about img 2.png"
-              alt="About 2"
-              className="absolute top-20 right-20 w-32 h-32 "
-            />
-            <img
-              src="./about img 3.png"
-              alt="About 3"
-              className="absolute bottom-20 left-20 w-32 h-32 "
-            />
-            <img
-              src="./about img 4.png"
-              alt="About 4"
-              className="absolute bottom-20 right-20 w-32 h-32 "
-            />
+            {/* Four images positioned closer inside splash */}
+            <img src="./about img 1.png" alt="About 1" className="absolute top-16 left-16 w-36 h-36" />
+            <img src="./about img 2.png" alt="About 2" className="absolute top-16 right-16 w-36 h-36" />
+            <img src="./about img 3.png" alt="About 3" className="absolute bottom-16 left-16 w-36 h-36" />
+            <img src="./about img 4.png" alt="About 4" className="absolute bottom-16 right-16 w-36 h-36" />
           </div>
         </div>
       </div>
