@@ -43,9 +43,10 @@ export default function FashionDesigning() {
   style={{
     top: '110px',
     left: '0px',
-    width: `${lineWidth + 30}px`, // add extra 30px for slightly longer line
+    width: `${Math.max(lineWidth + 30, 200)}px`, // ensures min width of 200px for mobile
   }}
 />
+
 
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 py-12 md:grid-cols-2 lg:py-16 xl:py-20 relative z-20">
@@ -53,17 +54,19 @@ export default function FashionDesigning() {
         <div className="relative w-full flex items-start justify-start">
           {/* Hanger with animation */}
           <motion.div
-            id="hanger-container"
-            className="relative w-[400px] md:w-[440px] lg:w-[480px] h-[400px] md:h-[440px] opacity-100 -translate-y-8 md:-translate-x-18 z-20"
-            animate={{ rotate: [2, -2, 2] }}
-            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <img
-              src="/hanger2new.webp"
-              alt="hanger"
-              className="w-full h-full object-contain select-none"
-            />
-          </motion.div>
+  id="hanger-container"
+  className="relative w-[400px] md:w-[440px] lg:w-[480px] h-[400px] md:h-[440px] opacity-100 -translate-y-8 md:-translate-x-18 z-20
+             -translate-x-4 md:-translate-x-18" // mobile shift slightly left
+  animate={{ rotate: [2, -2, 2] }}
+  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+>
+  <img
+    src="/hanger2new.webp"
+    alt="hanger"
+    className="w-full h-full object-contain select-none"
+  />
+</motion.div>
+
 
           {/* Dress stand */}
           <img

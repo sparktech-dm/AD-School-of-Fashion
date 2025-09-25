@@ -15,19 +15,19 @@ const MissionVision = () => {
         Opening Doors with AD School of Fashion
       </h2>
        <p
-            className="italic font-bold font-cormorant text-center text-xl md:text-3xl mb-6"
+            className="italic font-medium font-cormorant text-center text-[28px] md:text-3xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
             As we grew, we saw something beautiful: people didn’t just want to wear fashion, they wanted to learn it.
           </p><br></br>
            <p
-            className="italic font-bold font-cormorant text-center text-xl md:text-3xl mb-6"
+            className="italic font-bold font-cormorant text-center text-[30px] md:text-3xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
             That’s how AD School of Fashion was born.
           </p><br></br>
            <p
-            className="italic font-bold font-cormorant text-center text-xl md:text-3xl mb-6"
+            className=" font-medium font-cormorant text-center text-[28px] md:text-3xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
            We built the school for dreamers of all kinds; the 12-year-old sketching gowns in her notebook, the homemaker eager to try something new, the professional looking for a second career.<br></br>

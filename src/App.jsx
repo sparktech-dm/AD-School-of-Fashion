@@ -13,6 +13,8 @@ import FashionDesigning from "../src/pages/courses/FashionDesigning";
 import Aage from "./pages/courses/CoursesPage";
 import AboutPage from "./pages/about/AboutUs";
 import ScrollToTop from './components/Scrolltotop';
+import Fashion from "./components/Fashion";
+import Contact from "./pages/Contactus/Contact";
 
 const Home = () => {
   const location = useLocation();
@@ -40,9 +42,11 @@ const Home = () => {
       <section id="enquiry">
         <Enquiry />
       </section>
-
+      
       <Facilites />
+      <Fashion />
       <Galary />
+      
     </>
   );
 };
@@ -57,12 +61,12 @@ function App() {
           <Route path="/courses" element={<Aage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/enquiry" element={<Enquiry />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </ScrollToTop>
       <Footer />
     </>
   );
 }
-
 
 export default App;

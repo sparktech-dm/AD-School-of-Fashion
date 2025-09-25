@@ -12,42 +12,59 @@ export default function About() {
 
       <div className="flex flex-col md:flex-row w-full mx-auto min-h-[600px]">
         {/* Left Side Content */}
-        <div className="flex-[2] flex flex-col justify-center px-8 py-6 ml-auto md:ml-20">
+        <div className="flex-[2] flex flex-col justify-center items-center md:items-start px-8 py-6 ml-auto md:ml-20 text-center md:text-left">
           <h2
-            className="font-extrabold font-cormorant text-5xl md:text-7xl xl:text-8xl mb-6"
+            className="font-extrabold font-cormorant text-7xl md:text-7xl xl:text-8xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
             About
-          </h2>
+          </h2><br></br>
           <p
-            className="italic font-bold font-cormorant text-xl md:text-3xl mb-6"
+            className="italic font-bold font-cormorant text-5xl md:text-3xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
             Fashion isn’t only for models or magazines. It begins with the courage to cut your own fabric.
-          </p>
+          </p><br></br>
           <p
-            className="italic font-bold font-cormorant text-xl md:text-3xl mb-6"
+            className=" font-medium font-cormorant text-4xl md:text-3xl mb-6"
             style={{ color: "#5a2d4b" }}
           >
-            Our studios feel like a sketchbook brought to life — full of fabric, color, and ideas. With kind mentors, practical training, and a creative community, you’ll learn to transform your imagination into real fashion pieces. At AD School of Fashion, we open our doors to dreamers of every age.
+            Our studios feel like a sketchbook brought to life full of fabric, color, and ideas. With kind mentors, practical training, and a creative community, you’ll learn to transform your imagination into real fashion pieces. At AD School of Fashion, we open our doors to dreamers of every age.
           </p>
         </div>
 
         {/* Right Side Splash and Images */}
-        <div className="relative flex-[1.5] flex items-center justify-center px-16 py-14">
+        <div className="relative flex-[1.5] flex items-center justify-center px-18 py-14 ">
           {/* Splash Background Image */}
-          <div className="relative w-[40rem] h-[40rem] -mt-10"> {/* Increased size */}
+          <div className="relative w-[40rem] h-[40rem] -mt-10">
             <img
               src="./about bg splash.png"
               alt="Splash Background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover opacity-70"
               style={{ filter: "blur(2px)" }}
             />
-            {/* Four images positioned closer inside splash */}
-            <img src="./about img 1.png" alt="About 1" className="absolute top-16 left-16 w-36 h-36" />
-            <img src="./about img 2.png" alt="About 2" className="absolute top-16 right-16 w-36 h-36" />
-            <img src="./about img 3.png" alt="About 3" className="absolute bottom-16 left-16 w-36 h-36" />
-            <img src="./about img 4.png" alt="About 4" className="absolute bottom-16 right-16 w-36 h-36" />
+           {/* Four images positioned closer inside splash */}
+<img
+  src="./about img 1.png"
+  alt="About 1"
+  className="absolute top-20 left-20 w-48 h-48"
+/>
+<img
+  src="./about img 2.png"
+  alt="About 2"
+  className="absolute top-20 right-20 w-44 h-44"
+/>
+<img
+  src="./about img 3.png"
+  alt="About 3"
+  className="absolute bottom-20 left-20 w-44 h-44"
+/>
+<img
+  src="./about img 4.png"
+  alt="About 4"
+  className="absolute bottom-20 right-20 w-44 h-44"
+/>
+
           </div>
         </div>
       </div>

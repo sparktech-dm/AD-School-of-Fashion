@@ -17,7 +17,7 @@ export default function FounderSection() {
         className="pointer-events-none select-none absolute right-4 top-6 w-28 sm:w-36 md:w-44 opacity-30 object-contain"
       />
 
-      <div className="w-full px-6 sm:px-10 md:px-16 py-12 md:py-16 mx-auto max-w-7xl">
+      <div className="w-full px-6 sm:px-10 md:px-16 py-10 md:py-16 mx-auto max-w-7xl">
         {/* Heading */}
         <h2 className="text-center text-[#5a2d4b] tracking-[0.2em] font-extrabold text-2xl md:text-3xl mb-10">
           MEET OUR FOUNDER
@@ -36,11 +36,11 @@ export default function FounderSection() {
 
           {/* Text */}
           <div className="text-[#5a2d4b] text-left w-full">
-            <h3 className="font-extrabold tracking-[0.15em] text-2xl md:text-3xl mb-6 text-center">
+            <h3 className="font-extrabold tracking-[0.15em] text-4xl md:text-3xl mb-6 text-center">
               MS. SHANMUGAPRIYA
             </h3>
 
-            <div className="space-y-6 text-[18px] md:text-[20px] leading-8 md:leading-10 w-full">
+            <div className=" space-y-6 text-[28px] md:text-[20px] leading-8 md:leading-10 w-full">
               {/* Always visible content */}
               <p>
                 Behind every stitch and sketch at Aphrodite’s Drape is the vision of Ms.
