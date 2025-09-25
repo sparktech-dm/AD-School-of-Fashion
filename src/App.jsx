@@ -43,7 +43,6 @@ const Home = () => {
 
       <Facilites />
       <Galary />
-      <FashionDesigning />
     </>
   );
 };
@@ -64,5 +63,6 @@ function App() {
     </>
   );
 }
+
 
 export default App;
