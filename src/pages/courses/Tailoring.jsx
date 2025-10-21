@@ -3,98 +3,102 @@ import { motion } from 'framer-motion';
 
 export default function Tailoring() {
   const [lineWidth, setLineWidth] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const hanger = document.getElementById('tailor-hanger');
     const line = document.getElementById('tailor-line');
+    const container = line?.offsetParent;
 
     const updateLine = () => {
-      if (!hanger || !line) return;
+      if (!hanger || !line || !container) return;
 
-      const hangerRect = hanger.getBoundingClientRect();
-      const parentRect = line.offsetParent.getBoundingClientRect();
+      const hangerLeft = hanger.getBoundingClientRect().left - container.getBoundingClientRect().left;
+      const width = hangerLeft + hanger.offsetWidth / 2;
 
-      // distance from right edge to hanger hook
-      const hookX = hangerRect.left + hangerRect.width / 2;
-      const width = parentRect.right - hookX; // rightmost - hook position
-      setLineWidth(width + 30); // add a bit extra for aesthetic
+      setLineWidth(width > 0 ? width : 0);
+
+      const hookY = hanger.getBoundingClientRect().top + hanger.offsetHeight * 0.1 - container.getBoundingClientRect().top;
+      line.style.top = `${hookY}px`;
     };
 
-    const handleScroll = () => {
-      const rect = hanger.getBoundingClientRect();
-      if (rect.top < window.innerHeight * 0.9) {
-        updateLine();
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', updateLine);
     window.addEventListener('resize', updateLine);
-
-    // initial update
     updateLine();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', updateLine);
       window.removeEventListener('resize', updateLine);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#f0eee0] font-['Cormorant_Garamond'] py-6 lg:py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 lg:px-0 w-full">
+    <section className="relative w-full overflow-hidden bg-[#f0eee0] font-['Cormorant_Garamond'] py-12">
+      <div className={`flex flex-col md:flex-row items-center md:items-start w-full gap-8 px-6 lg:px-12`}>
 
-        {/* Left side text */}
-        <div className="flex flex-col items-start justify-center pl-6 lg:pl-[180px] xl:pl-[200px]">
-          <h2 className="text-[36px] md:text-[36px] lg:text-[36px] xl:text-[40px] font-bold text-[#6f4a86] whitespace-nowrap">
-            Creative Tailoring Design
+        {/* Left: Text content */}
+        <div className="flex flex-col justify-center w-full md:w-1/2 gap-6">
+          <h2 className="text-7xl font-bold text-[#5a2d4b]">
+            5-Month Tailoring Training
           </h2>
-          <p className="mt-4 text-[20px] md:text-[22px] lg:text-[30px] italic font-['Cormorant_Garamond'] text-[#6f4a86] leading-relaxed">
+          <p className="text-4xl italic text-[#5a2d4b]">
             Master the skill of tailoring with hands-on practice.
           </p>
-          <p className="mt-6 max-w-[560px] text-[18px] md:text-[20px] lg:text-[24px] leading-relaxed text-[#6f4a86]">
+          <p className="text-2xl leading-relaxed text-[#5a2d4b]">
             If you love the precision and technique behind making clothes, this course focuses on the craft of tailoring. Designed for learners who want deeper technical expertise, this program gives you confidence in working with a variety of garments.
           </p>
-           <p className="mt-6 text-[18px] md:text-[20px] lg:text-[24px] leading-relaxed text-[#6f4a86] max-w-full md:max-w-[700px]">
-  <span className="font-bold">Duration:</span> 5 months<br/>
-  <span className="font-bold">Class Schedule:</span> Weekend-only batches (Morning & Evening options available)
-</p>
 
+          {/* Bullet points */}
+          <ul className="list-disc list-inside text-2xl leading-relaxed text-[#5a2d4b] columns-1 md:columns-2 gap-4">
+            <li><span className="font-bold">Sewing Machine Anatomy:</span> Get comfortable with the tools of the trade</li>
+            <li><span className="font-bold">Pattern Drafting:</span> From standard measurements to perfect fits</li>
+            <li><span className="font-bold">Garment Construction:</span> Practice with kidswear, womenswear, menswear, and blouses</li>
+          </ul>
+
+          <p className="text-2xl leading-relaxed text-[#5a2d4b]">
+            <span className="font-bold">Duration:</span> 5 months<br />
+            <span className="font-bold">Class Schedule:</span> Weekend-only batches (Morning & Evening options available)
+          </p>
         </div>
 
-        {/* Right side: Hanger + Line + Smudge */}
-        <div className="relative w-full h-[460px]">
-          {/* Smudge background */}
+        {/* Right: Hanger + line + smudge */}
+        <div className="relative w-full md:w-1/2 h-[500px] flex justify-center md:justify-end">
+          {/* Smudge */}
           <img
-            src="/smudge_copy.webp"
-            alt="background smudge"
-            className="pointer-events-none absolute top-0 right-0 h-full max-h-[620px] w-auto opacity-50 select-none z-0"
+            src="/fashion bg smudge.png"
+            alt="hanger smudge"
+            className="pointer-events-none absolute right-0 top-0 w-auto h-full max-h-[600px] opacity-50 select-none z-0"
           />
 
-          {/* Growing Line */}
+          {/* Line from hanger right edge */}
           <div
             id="tailor-line"
-            className="absolute bg-black h-[2px] z-10 transition-all duration-1000 ease-out"
-            style={{
-              top: '35px',
-              right: '0px',
-              width: `${lineWidth}px`,
-            }}
+            className="absolute bg-black h-[2px] z-20 transition-all duration-1000 ease-out"
+            style={{ right: 0, width: `${lineWidth}px` }}
           />
 
-          {/* Hanger */}
+          {/* Hanger animation */}
           <motion.div
             id="tailor-hanger"
-            className="absolute w-[400px] md:w-[440px] lg:w-[480px] h-[400px] md:h-[440px] opacity-100 z-20"
+            className="absolute opacity-100 z-20 md:top-0"
             style={{
-              top: '0px',
-              left: window.innerWidth >= 768 && window.innerWidth < 1024 ? '25px' : 'auto',
-              right: window.innerWidth >= 1024 ? '0px' : 'auto',
+              width: isMobile ? '300px' : '440px',
+              height: isMobile ? '300px' : '480px',
+              top: isMobile ? '0' : undefined,
+              right: '0px',
             }}
             animate={{ rotate: [2, -2, 2] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <img
-              src="/hangernew1.webp"
+              src="/new.webp"
               alt="hanger"
               className="w-full h-full object-contain select-none"
             />
@@ -104,7 +108,11 @@ export default function Tailoring() {
           <img
             src="/dress stand.webp"
             alt="dress stands"
-            className="hidden md:block absolute -bottom-10 -right-12 w-28 opacity-90 select-none z-10"
+            className="hidden md:block absolute w-28 opacity-90 select-none z-10"
+            style={{
+              bottom: '-2.5rem',
+              right: '0px',
+            }}
           />
         </div>
       </div>

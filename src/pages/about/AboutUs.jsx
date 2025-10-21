@@ -1,6 +1,8 @@
 import AboutHero from "./AboutHero";
 import OurMissionVision from "./OurMissionVision";
 import Founder from "./FounderSection";
+import Drape from "./Drape";
+import FashionWithPurpose from "./FashionWithPurpose";
 
 
 const AboutUs = () => {
@@ -12,7 +14,9 @@ const AboutUs = () => {
       
       <OurMissionVision />
 
-      
+      <Drape />
+
+      <FashionWithPurpose />
 
     </>
   );

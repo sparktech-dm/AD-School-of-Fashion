@@ -12,7 +12,7 @@ export default function Center() {
     <section className="pt-10 bg-[#f0eee0]">
       {/* Title */}
       <div className="text-center mb-12">
-        <h2 className="text-7xl md:text-4xl lg:text-5xl text-[#4b284b] font-extrabold font-cormorant">
+        <h2 className="text-7xl md:text-4xl lg:text-7xl text-[#4b284b] font-extrabold font-cormorant">
           Our Courses
         </h2>
       </div>

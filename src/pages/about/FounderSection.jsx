@@ -9,15 +9,15 @@ export default function FounderSection() {
   const [showMore, setShowMore] = useState(false)
 
   return (
-    <section className="relative w-full bg-[#f0eee0] font-['Cormorant_Garamond']">
+    <section className="relative w-full bg-[#f0eee0] font-['Cormorant_Garamond'] overflow-x-hidden">
       {/* Decorative dress outline */}
       <img
         src={DRESS_IMG}
         alt="Dress outline"
-        className="pointer-events-none select-none absolute right-4 top-6 w-28 sm:w-36 md:w-44 opacity-30 object-contain"
+        className=" hidden md:block pointer-events-none select-none absolute right-8 top-6 w-28 sm:w-36 md:w-44 opacity-30 object-contain"
       />
 
-      <div className="w-full px-6 sm:px-10 md:px-16 py-12 md:py-16 mx-auto max-w-7xl">
+      <div className="w-full px-6 sm:px-10 md:px-16 py-10 md:py-16 mx-auto max-w-7xl">
         {/* Heading */}
         <h2 className="text-center text-[#5a2d4b] tracking-[0.2em] font-extrabold text-2xl md:text-3xl mb-10">
           MEET OUR FOUNDER
@@ -28,19 +28,19 @@ export default function FounderSection() {
           {/* Photo */}
           <div className="relative w-[320px] sm:w-[352px] md:w-[380px] aspect-square">
             <img
-              src={FOUNDER_IMG}
+              src="/shanmuga priya.webp"
               alt="Founder portrait"
-              className="block w-full h-full object-cover rounded-lg shadow-lg"
+              className="block w-full h-full "
             />
           </div>
 
           {/* Text */}
           <div className="text-[#5a2d4b] text-left w-full">
-            <h3 className="font-extrabold tracking-[0.15em] text-2xl md:text-3xl mb-6 text-center">
+            <h2 className='relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold font-cormorant text-center text-[#5b2a59] mb-10 z-10'>
               MS. SHANMUGAPRIYA
-            </h3>
+            </h2>
 
-            <div className="space-y-6 text-[18px] md:text-[20px] leading-8 md:leading-10 w-full">
+            <div className="space-y-6 text-base sm:text-lg md:text-xl leading-7 md:leading-8 w-full">
               {/* Always visible content */}
               <p>
                 Behind every stitch and sketch at Aphrodite’s Drape is the vision of Ms.

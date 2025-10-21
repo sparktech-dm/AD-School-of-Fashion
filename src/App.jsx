@@ -13,6 +13,9 @@ import FashionDesigning from "../src/pages/courses/FashionDesigning";
 import Aage from "./pages/courses/CoursesPage";
 import AboutPage from "./pages/about/AboutUs";
 import ScrollToTop from './components/Scrolltotop';
+import Fashion from "./components/Fashion";
+import Contact from "./pages/Contactus/Contact";
+import { Gallery } from "./pages/galary/Gallery";
 
 const Home = () => {
   const location = useLocation();
@@ -40,10 +43,11 @@ const Home = () => {
       <section id="enquiry">
         <Enquiry />
       </section>
-
+      
       <Facilites />
-      <Galary />
-      <FashionDesigning />
+      {/* <Fashion /> */}
+      {/* <Galary /> */}
+      
     </>
   );
 };
@@ -52,14 +56,18 @@ function App() {
   return (
     <>
       <Navbar />
+      <div className="pt-20 md:pt-24">
       <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Aage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/enquiry" element={<Enquiry />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery/>} />
         </Routes>
       </ScrollToTop>
+      </div>
       <Footer />
     </>
   );
